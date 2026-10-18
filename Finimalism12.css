@@ -6385,11 +6385,26 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
   opacity: 1 !important;
 }
 
+/* Homepage-only sizing: reduce cards by 10% without affecting detail pages.
+   Explicit flex-basis values keep flex-grow from restoring the old card size. */
+.layout-desktop #indexPage .itemsContainer .card.portraitCard,
+.layout-tv #indexPage .itemsContainer .card.portraitCard {
+  flex: 0 0 calc(11.25% - 0.39375rem);
+  min-width: 0;
+}
 
-/* Homepage-only card sizing: CSS zoom affects layout, unlike transform: scale(),
-   so the cards take up less space and wrap later at normal browser zoom.
-   Detail-page episode, cast, and recommendation rails retain their current size. */
-.layout-desktop #indexPage .itemsContainer > .card,
-.layout-tv #indexPage .itemsContainer > .card {
-  zoom: 0.9;
+.layout-desktop #indexPage .itemsContainer .card.backdropCard,
+.layout-tv #indexPage .itemsContainer .card.backdropCard {
+  flex: 0 0 calc(15% - 0.375rem);
+  min-width: 0;
+}
+
+.layout-desktop #indexPage .itemsContainer .card.overflowPortraitCard,
+.layout-tv #indexPage .itemsContainer .card.overflowPortraitCard,
+.layout-desktop #indexPage .itemsContainer .card.overflowSquareCard,
+.layout-tv #indexPage .itemsContainer .card.overflowSquareCard,
+.layout-desktop #indexPage .itemsContainer .card.overflowBackdropCard,
+.layout-tv #indexPage .itemsContainer .card.overflowBackdropCard {
+  width: 14.4vw !important;
+  min-width: 0;
 }
