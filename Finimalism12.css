@@ -6384,3 +6384,12 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
 .layout-tv #itemDetailPage .emby-scrollbuttons button[data-direction]:hover {
   opacity: 1 !important;
 }
+
+
+/* Homepage-only card sizing: CSS zoom affects layout, unlike transform: scale(),
+   so the cards take up less space and wrap later at normal browser zoom.
+   Detail-page episode, cast, and recommendation rails retain their current size. */
+.layout-desktop #indexPage .itemsContainer > .card,
+.layout-tv #indexPage .itemsContainer > .card {
+  zoom: 0.9;
+}
