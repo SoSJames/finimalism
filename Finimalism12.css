@@ -3739,7 +3739,10 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
   background: transparent;
 }
 
-[dir="ltr"] .detailPageContent {
+/* Jellyfin Web 12.x compatibility: the legacy item-details template no longer has
+   the old .detailPageContent wrapper. Keep these spacing rules on the actual
+   .detailPageSecondaryContainer used by the 12.x DOM. */
+[dir="ltr"] .detailPageSecondaryContainer {
   padding-left: 26.2em;
   padding-right: 0%;
 }
@@ -4422,9 +4425,9 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
 }
 
 .layout-desktop .itemDetailPage:has(.button-link.itemAction.emby-button[data-type="Season"]) .detailPagePrimaryContent,
-.layout-desktop .itemDetailPage:has(.button-link.itemAction.emby-button[data-type="Season"]) .detailPageContent,
+.layout-desktop .itemDetailPage:has(.button-link.itemAction.emby-button[data-type="Season"]) .detailPageSecondaryContainer,
 .layout-tv .itemDetailPage:has(.button-link.itemAction.emby-button.show-focus[data-type="Season"]) .detailPagePrimaryContent,
-.layout-tv .itemDetailPage:has(.button-link.itemAction.emby-button.show-focus[data-type="Season"]) .detailPageContent {
+.layout-tv .itemDetailPage:has(.button-link.itemAction.emby-button.show-focus[data-type="Season"]) .detailPageSecondaryContainer {
   padding-left: 33.2em;
 }
 
@@ -5497,7 +5500,7 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
 
 
 @media (orientation: landscape) {
-  .layout-mobile .detailPageContent {
+  .layout-mobile .detailPageSecondaryContainer {
     padding-left: 25%;
     padding-right: 0%;
   }
@@ -5791,7 +5794,7 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
   width: 100vw;
 }
 
-.layout-mobile [dir="ltr"] .detailPageContent {
+.layout-mobile [dir="ltr"] .detailPageSecondaryContainer {
   padding-left: 2vw;
 }
 
@@ -5885,7 +5888,7 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
   }
 }
 
-.layout-mobile .detailPageContent {
+.layout-mobile .detailPageSecondaryContainer {
   padding-left: 5%;
   padding-right: 0;
 }
