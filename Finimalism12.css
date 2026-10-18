@@ -6468,3 +6468,11 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
   width: 14.4vw !important;
   min-width: 0;
 }
+
+/* Make the entire Jellyfin admin interface more compact.
+   Jellyfin adds .dashboardDocument to the body while the admin app is active,
+   so this scales the admin header, drawer, forms, tables, and page content
+   together without changing normal home/library/playback pages. */
+body.dashboardDocument {
+  zoom: 0.9;
+}
