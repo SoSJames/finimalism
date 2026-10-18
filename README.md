@@ -1,4 +1,4 @@
-# Finimalism for Jellyfin v10.11.x  ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/tedhinklater/finimalism/badge) 
+# Finimalism for Jellyfin v10.11.x  ![jsDelivr](https://data.jsdelivr.com/v1/package/gh/SoSJames/finimalism/badge) 
 
 Just paste the import line into your "Dashboard > Branding > CSS" section, or "User Settings > Display > CSS" section.
 
@@ -8,12 +8,12 @@ Note: For Jellyfin Media Player, you need the latest [Jellyfin Desktop 2.0.0](ht
 
 ## V11
 ```css
-@import url("https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/Finimalism11.css");
+@import url("https://cdn.jsdelivr.net/gh/SoSJames/finimalism@main/Finimalism11.css");
 ```
 
 ## V12
 ```css
-@import url("https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/Finimalism12.css");
+@import url("https://cdn.jsdelivr.net/gh/SoSJames/finimalism@main/Finimalism12.css");
 ```
 
 <table>
@@ -52,7 +52,7 @@ Note: For Jellyfin Media Player, you need the latest [Jellyfin Desktop 2.0.0](ht
 Below is an example of how to use custom colours
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/Finimalism11.css");
+@import url("https://cdn.jsdelivr.net/gh/SoSJames/finimalism@main/Finimalism12.css");
 /* Custom Colours */
 :root { 
   --accent: 202, 20, 20; 
@@ -67,7 +67,7 @@ Below is an example of how to use custom colours
 Add this for horizontal scrollers on the homepage
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/tedhinklater/finimalism@main/scrollers-11.css");
+@import url("https://cdn.jsdelivr.net/gh/SoSJames/finimalism@main/scrollers-11.css");
 ```
 
 # Feedback
