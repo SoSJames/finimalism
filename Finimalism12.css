@@ -6385,8 +6385,68 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
   opacity: 1 !important;
 }
 
-/* Homepage-only sizing: reduce cards by 10% without affecting detail pages.
-   Explicit flex-basis values keep flex-grow from restoring the old card size. */
+/* Homepage layout fix: keep the wrappers full-width in Chromium.
+   Width limits on cards alone do not help if a scroller/section shrinks to its
+   contents. The rules below apply only to the home screen, not detail rails. */
+.layout-desktop #indexPage .sections.homeSectionsContainer,
+.layout-tv #indexPage .sections.homeSectionsContainer {
+  box-sizing: border-box;
+  width: calc(100vw - 1rem) !important;
+  max-width: calc(100vw - 1rem) !important;
+  min-width: 0 !important;
+}
+
+.layout-desktop #indexPage .homePage .verticalSection,
+.layout-tv #indexPage .homePage .verticalSection,
+.layout-desktop #homeTab .verticalSection,
+.layout-tv #homeTab .verticalSection {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.layout-desktop #indexPage .homePage .emby-scroller-container,
+.layout-tv #indexPage .homePage .emby-scroller-container,
+.layout-desktop #homeTab .emby-scroller-container,
+.layout-tv #homeTab .emby-scroller-container {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin-right: 0 !important;
+}
+
+.layout-desktop #indexPage .homePage .emby-scroller,
+.layout-tv #indexPage .homePage .emby-scroller,
+.layout-desktop #homeTab .emby-scroller,
+.layout-tv #homeTab .emby-scroller {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin-right: 0 !important;
+}
+
+.layout-desktop #indexPage .homePage .itemsContainer,
+.layout-tv #indexPage .homePage .itemsContainer,
+.layout-desktop #homeTab .itemsContainer,
+.layout-tv #homeTab .itemsContainer {
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Home library buttons are not .card elements, so size them independently. */
+.layout-desktop #homeTab .section0 .homeLibraryButton,
+.layout-tv #homeTab .section0 .homeLibraryButton {
+  min-width: 6.3em !important;
+  margin-left: 0.9em !important;
+  margin-right: 0.9em !important;
+}
+
+/* Keep homepage posters about 10% smaller while preserving responsive widths. */
 .layout-desktop #indexPage .itemsContainer .card.portraitCard,
 .layout-tv #indexPage .itemsContainer .card.portraitCard {
   flex: 0 0 calc(11.25% - 0.39375rem);
