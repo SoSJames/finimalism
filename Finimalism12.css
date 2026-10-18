@@ -6331,3 +6331,56 @@ button[is="paper-icon-button-light"].cardOverlayButton.cardOverlayButton-hover.i
     vertical-align: middle;
   }
 }
+
+/* Jellyfin Web 12.x legacy compatibility: keep homepage grids inside the
+   available viewport width. The legacy scroller assigns an inline width to
+   slidee elements; without a width cap, the wrapped grid can stay left-aligned
+   on an artificially wide row. */
+.layout-desktop #indexPage .itemsContainer,
+.layout-tv #indexPage .itemsContainer {
+  box-sizing: border-box;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+/* The detail-page rails are intentionally horizontal. Keep their slidees
+   wider than the viewport when necessary so Jellyfin's legacy scroller
+   correctly detects overflow and enables its previous/next controls. */
+.layout-desktop #itemDetailPage .detailVerticalSection .scrollSlider.itemsContainer,
+.layout-tv #itemDetailPage .detailVerticalSection .scrollSlider.itemsContainer {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  width: max-content !important;
+  min-width: 100% !important;
+  max-width: none !important;
+  white-space: nowrap !important;
+}
+
+.layout-desktop #itemDetailPage .detailVerticalSection .scrollSlider.itemsContainer > .card,
+.layout-tv #itemDetailPage .detailVerticalSection .scrollSlider.itemsContainer > .card {
+  flex: 0 0 auto;
+}
+
+/* Keep the legacy previous/next controls on top of the detail rails and
+   ensure they remain legible with the theme's dark backdrop. Do not override
+   the .hide class Jellyfin applies when a rail genuinely has no overflow. */
+.layout-desktop #itemDetailPage .emby-scrollbuttons,
+.layout-tv #itemDetailPage .emby-scrollbuttons {
+  display: flex;
+  visibility: visible;
+  opacity: 1 !important;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.layout-desktop #itemDetailPage .emby-scrollbuttons button[data-direction],
+.layout-tv #itemDetailPage .emby-scrollbuttons button[data-direction] {
+  color: #fff !important;
+  opacity: 0.85;
+}
+
+.layout-desktop #itemDetailPage .emby-scrollbuttons button[data-direction]:hover,
+.layout-tv #itemDetailPage .emby-scrollbuttons button[data-direction]:hover {
+  opacity: 1 !important;
+}
